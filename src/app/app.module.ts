@@ -9,12 +9,30 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { RouterModule, Routes } from '@angular/router';
+import { BookDetailComponent } from './book-detail/book-detail.component';
+import { BookCreateComponent } from './book-create/book-create.component';
+import { BookEditComponent } from './book-edit/book-edit.component';
 
 const appRoutes: Routes = [
   {
     path: 'books',
     component: BookComponent,
     data: { title: 'Book List' }
+  },
+  {
+    path: 'book-details/:id',
+    component: BookDetailComponent,
+    data: { title: 'Book Details' }
+  },
+  {
+    path: 'book-create',
+    component: BookCreateComponent,
+    data: { title: 'Create Book' }
+  },
+  {
+    path: 'book-edit/:id',
+    component: BookEditComponent,
+    data: { title: 'Edit Book' }
   },
   { path: '',
     redirectTo: '/books',
@@ -25,16 +43,19 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    BookComponent
+    BookComponent,
+    BookDetailComponent,
+    BookCreateComponent,
+    BookEditComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
-    ),
-    FormsModule
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
