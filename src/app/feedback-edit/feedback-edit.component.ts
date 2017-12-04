@@ -3,36 +3,35 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-book-edit',
-  templateUrl: './book-edit.component.html',
-  styleUrls: ['./book-edit.component.css'],
+  selector: 'app-feedback-edit',
+  templateUrl: './feedback-edit.component.html',
+  styleUrls: ['./feedback-edit.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class BookEditComponent implements OnInit {
+export class FeedbackEditComponent implements OnInit {
 
-  book = {};
+  feedback = {};
 
   constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.getBook(this.route.snapshot.params['id']);
+    this.getFeedback(this.route.snapshot.params['id']);
   }
 
-  getBook(id) {
-    this.http.get('/book/'+id).subscribe(data => {
-      this.book = data;
+  getFeedback(id) {
+    this.http.get('/feedback/'+id).subscribe(data => {
+      this.feedback = data;
     });
   }
 
-  updateBook(id, data) {
-    this.http.put('/book/'+id, data)
+  updateFeedback(id, data) {
+    this.http.put('/feedback/'+id, data)
       .subscribe(res => {
           let id = res['_id'];
-          this.router.navigate(['/book-details', id]);
+          this.router.navigate(['/feedback-details', id]);
         }, (err) => {
           console.log(err);
         }
       );
   }
-
 }

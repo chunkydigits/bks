@@ -3,29 +3,28 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-book-create',
-  templateUrl: './book-create.component.html',
-  styleUrls: ['./book-create.component.css'],
+  selector: 'app-feedback-create',
+  templateUrl: './feedback-create.component.html',
+  styleUrls: ['./feedback-create.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class BookCreateComponent implements OnInit {
+export class FeedbackCreateComponent implements OnInit {
 
-  book = {};
+  feedback = {};
 
   constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
   }
 
-  saveBook() {
-    this.http.post('/book', this.book)
+  saveFeedback() {
+    this.http.post('/feedback', this.feedback)
       .subscribe(res => {
           let id = res['_id'];
-          this.router.navigate(['/book-details', id]);
+          this.router.navigate(['/feedback-details', id]);
         }, (err) => {
           console.log(err);
         }
       );
   }
-
-}
+} 

@@ -3,39 +3,39 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { BookComponent } from './book/book.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { RouterModule, Routes } from '@angular/router';
-import { BookDetailComponent } from './book-detail/book-detail.component';
-import { BookCreateComponent } from './book-create/book-create.component';
-import { BookEditComponent } from './book-edit/book-edit.component';
+import { FeedbackDetailComponent } from './feedback-detail/feedback-detail.component';
+import { FeedbackCreateComponent } from './feedback-create/feedback-create.component';
+import { FeedbackEditComponent } from './feedback-edit/feedback-edit.component';
 
 const appRoutes: Routes = [
   {
-    path: 'books',
-    component: BookComponent,
-    data: { title: 'Book List' }
+    path: 'feedbacks',
+    component: FeedbackComponent,
+    data: { title: 'Feedback List' }
   },
   {
-    path: 'book-details/:id',
-    component: BookDetailComponent,
-    data: { title: 'Book Details' }
+    path: 'feedback-details/:id',
+    component: FeedbackDetailComponent,
+    data: { title: 'Feedback Details' }
   },
   {
-    path: 'book-create',
-    component: BookCreateComponent,
-    data: { title: 'Create Book' }
+    path: 'feedback-create',
+    component: FeedbackCreateComponent,
+    data: { title: 'Create Feedback' }
   },
   {
-    path: 'book-edit/:id',
-    component: BookEditComponent,
-    data: { title: 'Edit Book' }
+    path: 'feedback-edit/:id',
+    component: FeedbackEditComponent,
+    data: { title: 'Edit Feedback' }
   },
   { path: '',
-    redirectTo: '/books',
+    redirectTo: '/feedbacks',
     pathMatch: 'full'
   }
 ];
@@ -43,10 +43,10 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    BookComponent,
-    BookDetailComponent,
-    BookCreateComponent,
-    BookEditComponent
+    FeedbackComponent,
+    FeedbackDetailComponent,
+    FeedbackCreateComponent,
+    FeedbackEditComponent
   ],
   imports: [
     BrowserModule,
