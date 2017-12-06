@@ -89,18 +89,19 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/esm5/platform-browser.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__("../../../http/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_routes__ = __webpack_require__("../../../../../src/app/app.routes.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__auth_auth_service__ = __webpack_require__("../../../../../src/app/auth/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__guards_userIsLoggedIn_guard__ = __webpack_require__("../../../../../src/app/guards/userIsLoggedIn.guard.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__home_home_component__ = __webpack_require__("../../../../../src/app/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__callback_callback_component__ = __webpack_require__("../../../../../src/app/callback/callback.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__feedback_feedback_component__ = __webpack_require__("../../../../../src/app/feedback/feedback.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__feedback_detail_feedback_detail_component__ = __webpack_require__("../../../../../src/app/feedback-detail/feedback-detail.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__feedback_create_feedback_create_component__ = __webpack_require__("../../../../../src/app/feedback-create/feedback-create.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__feedback_edit_feedback_edit_component__ = __webpack_require__("../../../../../src/app/feedback-edit/feedback-edit.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__home_home_component__ = __webpack_require__("../../../../../src/app/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__callback_callback_component__ = __webpack_require__("../../../../../src/app/callback/callback.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__feedback_feedback_component__ = __webpack_require__("../../../../../src/app/feedback/feedback.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__feedback_detail_feedback_detail_component__ = __webpack_require__("../../../../../src/app/feedback-detail/feedback-detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__feedback_create_feedback_create_component__ = __webpack_require__("../../../../../src/app/feedback-create/feedback-create.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__feedback_edit_feedback_edit_component__ = __webpack_require__("../../../../../src/app/feedback-edit/feedback-edit.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -122,30 +123,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_9__home_home_component__["a" /* HomeComponent */],
-                __WEBPACK_IMPORTED_MODULE_10__callback_callback_component__["a" /* CallbackComponent */],
-                __WEBPACK_IMPORTED_MODULE_11__feedback_feedback_component__["a" /* FeedbackComponent */],
-                __WEBPACK_IMPORTED_MODULE_12__feedback_detail_feedback_detail_component__["a" /* FeedbackDetailComponent */],
-                __WEBPACK_IMPORTED_MODULE_13__feedback_create_feedback_create_component__["a" /* FeedbackCreateComponent */],
-                __WEBPACK_IMPORTED_MODULE_14__feedback_edit_feedback_edit_component__["a" /* FeedbackEditComponent */]
+                __WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_10__home_home_component__["a" /* HomeComponent */],
+                __WEBPACK_IMPORTED_MODULE_11__callback_callback_component__["a" /* CallbackComponent */],
+                __WEBPACK_IMPORTED_MODULE_12__feedback_feedback_component__["a" /* FeedbackComponent */],
+                __WEBPACK_IMPORTED_MODULE_13__feedback_detail_feedback_detail_component__["a" /* FeedbackDetailComponent */],
+                __WEBPACK_IMPORTED_MODULE_14__feedback_create_feedback_create_component__["a" /* FeedbackCreateComponent */],
+                __WEBPACK_IMPORTED_MODULE_15__feedback_edit_feedback_edit_component__["a" /* FeedbackEditComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                //HttpClientModule,
-                __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_http__["a" /* HttpModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_6__app_routes__["a" /* ROUTES */], { enableTracing: true } // <-- debugging purposes only
+                __WEBPACK_IMPORTED_MODULE_5__angular_router__["d" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_6__app_routes__["a" /* ROUTES */], { enableTracing: true } // <-- debugging purposes only
                 )
             ],
             providers: [__WEBPACK_IMPORTED_MODULE_7__auth_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_8__guards_userIsLoggedIn_guard__["a" /* IsUserLoggedInGuard */]],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
@@ -177,10 +179,16 @@ var AppModule = (function () {
 var ROUTES = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_0__home_home_component__["a" /* HomeComponent */] },
     {
+        path: 'callback',
+        component: __WEBPACK_IMPORTED_MODULE_1__callback_callback_component__["a" /* CallbackComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_userIsLoggedIn_guard__["a" /* IsUserLoggedInGuard */]]
+    },
+    {
         path: 'feedbacks',
         component: __WEBPACK_IMPORTED_MODULE_2__feedback_feedback_component__["a" /* FeedbackComponent */],
-        data: { title: 'Feedback List' },
-        canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_userIsLoggedIn_guard__["a" /* IsUserLoggedInGuard */]]
+        data: { title: 'Feedback List' }
+        //,
+        //canActivate: [IsUserLoggedInGuard]
     },
     {
         path: 'feedback-details/:id',
@@ -200,10 +208,6 @@ var ROUTES = [
         data: { title: 'Edit Feedback' },
         canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_userIsLoggedIn_guard__["a" /* IsUserLoggedInGuard */]]
     },
-    {
-        path: 'callback', component: __WEBPACK_IMPORTED_MODULE_1__callback_callback_component__["a" /* CallbackComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_userIsLoggedIn_guard__["a" /* IsUserLoggedInGuard */]]
-    },
     { path: '**', redirectTo: '' }
 ];
 
@@ -218,8 +222,9 @@ var ROUTES = [
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__auth0_variables__ = __webpack_require__("../../../../../src/app/auth/auth0-variables.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_auth0_js__ = __webpack_require__("../../../../auth0-js/src/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_auth0_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_auth0_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_filter__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/filter.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_auth0_lock__ = __webpack_require__("../../../../auth0-lock/lib/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_auth0_lock___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_auth0_lock__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -233,34 +238,62 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var AuthService = (function () {
     function AuthService(router) {
         this.router = router;
-        this.auth0 = new __WEBPACK_IMPORTED_MODULE_3_auth0_js__["WebAuth"]({
-            clientID: __WEBPACK_IMPORTED_MODULE_1__auth0_variables__["a" /* AUTH_CONFIG */].clientID,
-            domain: __WEBPACK_IMPORTED_MODULE_1__auth0_variables__["a" /* AUTH_CONFIG */].domain,
-            responseType: 'token id_token',
-            audience: "https://" + __WEBPACK_IMPORTED_MODULE_1__auth0_variables__["a" /* AUTH_CONFIG */].domain + "/userinfo",
-            redirectUri: 'http://localhost:4200/callback',
-            scope: 'openid'
+        this.lock = new __WEBPACK_IMPORTED_MODULE_4_auth0_lock___default.a(__WEBPACK_IMPORTED_MODULE_1__auth0_variables__["a" /* AUTH_CONFIG */].clientID, __WEBPACK_IMPORTED_MODULE_1__auth0_variables__["a" /* AUTH_CONFIG */].domain, {
+            oidcConformant: true,
+            autoclose: true,
+            auth: {
+                redirectUrl: __WEBPACK_IMPORTED_MODULE_1__auth0_variables__["a" /* AUTH_CONFIG */].callbackURL,
+                responseType: 'token id_token',
+                audience: "https://" + __WEBPACK_IMPORTED_MODULE_1__auth0_variables__["a" /* AUTH_CONFIG */].domain + "/userinfo",
+                params: {
+                    scope: 'openid'
+                }
+            }
         });
     }
     AuthService.prototype.login = function () {
-        this.auth0.authorize();
+        this.lock.show();
     };
+    // Call this method in app.component.ts
+    // if using path-based routing
     AuthService.prototype.handleAuthentication = function () {
         var _this = this;
-        this.auth0.parseHash(function (err, authResult) {
+        this.lock.on('authenticated', function (authResult) {
             if (authResult && authResult.accessToken && authResult.idToken) {
-                window.location.hash = '';
                 _this.setSession(authResult);
-                _this.router.navigate(['/home']);
+                _this.router.navigate(['/']);
             }
-            else if (err) {
-                _this.router.navigate(['/home']);
-                console.log(err);
-                alert("Error: " + err.error + ". Check the console for further details.");
-            }
+        });
+        this.lock.on('authorization_error', function (err) {
+            _this.router.navigate(['/']);
+            console.log(err);
+            alert("Error: " + err.error + ". Check the console for further details.");
+        });
+    };
+    // Call this method in app.component.ts
+    // if using hash-based routing
+    AuthService.prototype.handleAuthenticationWithHash = function () {
+        var _this = this;
+        this
+            .router
+            .events
+            .filter(function (event) { return event instanceof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* NavigationStart */]; })
+            .filter(function (event) { return (/access_token|id_token|error/).test(event.url); })
+            .subscribe(function () {
+            _this.lock.resumeAuth(window.location.hash, function (err, authResult) {
+                if (err) {
+                    _this.router.navigate(['/']);
+                    console.log(err);
+                    alert("Error: " + err.error + ". Check the console for further details.");
+                    return;
+                }
+                _this.setSession(authResult);
+                _this.router.navigate(['/']);
+            });
         });
     };
     AuthService.prototype.setSession = function (authResult) {
@@ -286,7 +319,7 @@ var AuthService = (function () {
     };
     AuthService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */]])
     ], AuthService);
     return AuthService;
 }());
@@ -304,6 +337,9 @@ var AUTH_CONFIG = {
     clientID: '6MQUpb0rrQJYSjdFmlZm4pi4IfKd1f7Y',
     domain: 'chains.eu.auth0.com',
     callbackURL: 'http://localhost:4200/callback'
+    // clientID: 'q9h6uxP3YMBMMNjI6DFjCX6eNODtJxjl',
+    // domain: 'chains.eu.auth0.com',
+    // callbackURL: 'http://localhost:4200/callback'
 };
 
 
@@ -440,7 +476,7 @@ var FeedbackCreateComponent = (function () {
             styles: [__webpack_require__("../../../../../src/app/feedback-create/feedback-create.component.css")],
             encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* ViewEncapsulation */].None
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */]])
     ], FeedbackCreateComponent);
     return FeedbackCreateComponent;
 }());
@@ -526,7 +562,7 @@ var FeedbackDetailComponent = (function () {
             styles: [__webpack_require__("../../../../../src/app/feedback-detail/feedback-detail.component.css")],
             encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* ViewEncapsulation */].None
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */], __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* Router */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */], __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
     ], FeedbackDetailComponent);
     return FeedbackDetailComponent;
 }());
@@ -613,7 +649,7 @@ var FeedbackEditComponent = (function () {
             styles: [__webpack_require__("../../../../../src/app/feedback-edit/feedback-edit.component.css")],
             encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* ViewEncapsulation */].None
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]])
     ], FeedbackEditComponent);
     return FeedbackEditComponent;
 }());
@@ -713,7 +749,14 @@ var IsUserLoggedInGuard = (function () {
         this.authService = authService;
     }
     IsUserLoggedInGuard.prototype.canActivate = function () {
-        return this.authService.isAuthenticated();
+        console.log("IsUserLoggedInGuard");
+        if (this.authService.isAuthenticated()) {
+            return true;
+        }
+        else {
+            window.alert("You don't have permission to view this page");
+            return false;
+        }
     };
     IsUserLoggedInGuard = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
@@ -734,7 +777,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "a {\n  cursor: pointer;\n}", ""]);
+exports.push([module.i, "a {\r\n  cursor: pointer;\r\n}", ""]);
 
 // exports
 
@@ -747,7 +790,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h4 *ngIf=\"auth.isAuthenticated()\">\n  You are logged in!\n</h4>\n<h4 *ngIf=\"!auth.isAuthenticated()\">\n  You are not logged in! Please <a (click)=\"auth.login()\">Log In</a> to continue.\n</h4>\n"
+module.exports = "<h4 *ngIf=\"auth.isAuthenticated()\">\r\n  You are logged in!\r\n</h4>\r\n<h4 *ngIf=\"!auth.isAuthenticated()\">\r\n  You are not logged in! Please <a (click)=\"auth.login()\">Log In</a> to continue.\r\n</h4>\r\n"
 
 /***/ }),
 

@@ -1,0 +1,11 @@
+<head>
+  <script src="https://cdn.auth0.com/js/auth0/8.10.1/auth0.min.js"></script>
+  <script type="text/javascript">
+    var auth0 = new auth0.WebAuth({
+      clientID: '6MQUpb0rrQJYSjdFmlZm4pi4IfKd1f7Y',
+      domain: 'chains.eu.auth0.com',
+      callbackURL: 'http://localhost:4200/callback'
+    });
+    auth0.crossOriginAuthenticationCallback();
+  </script>
+</head>

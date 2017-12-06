@@ -8,6 +8,12 @@ export class IsUserLoggedInGuard implements CanActivate {
   constructor(private authService: AuthService) {}
 
   canActivate() {
-    return this.authService.isAuthenticated();
+    console.log("IsUserLoggedInGuard")
+    if (this.authService.isAuthenticated()) { 
+      return true;
+    } else {
+      window.alert("You don't have permission to view this page"); 
+      return false;
+    }
   }
 }

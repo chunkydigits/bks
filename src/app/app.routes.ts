@@ -12,10 +12,16 @@ import { IsUserLoggedInGuard } from './guards/userIsLoggedIn.guard';
 export const ROUTES: Routes = [
   { path: '', component: HomeComponent },
   {
+    path: 'callback',
+    component: CallbackComponent,
+    canActivate: [IsUserLoggedInGuard]
+  },
+  {
     path: 'feedbacks',
     component: FeedbackComponent,
-    data: { title: 'Feedback List' },
-    canActivate: [IsUserLoggedInGuard]
+    data: { title: 'Feedback List' }
+    //,
+    //canActivate: [IsUserLoggedInGuard]
   },
   {
     path: 'feedback-details/:id',
@@ -33,10 +39,6 @@ export const ROUTES: Routes = [
     path: 'feedback-edit/:id',
     component: FeedbackEditComponent,
     data: { title: 'Edit Feedback' },
-    canActivate: [IsUserLoggedInGuard]
-  },
-  {
-    path: 'callback', component: CallbackComponent,
     canActivate: [IsUserLoggedInGuard]
   },
   { path: '**', redirectTo: '' }
