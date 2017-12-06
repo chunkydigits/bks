@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 
 import { ROUTES } from './app.routes';
 import { AuthService } from './auth/auth.service';
+import { IsUserLoggedInGuard } from './guards/userIsLoggedIn.guard';
 
 import { HomeComponent } from './home/home.component';
 import { CallbackComponent } from './callback/callback.component';
@@ -30,7 +31,7 @@ import { FeedbackEditComponent } from './feedback-edit/feedback-edit.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
+    //HttpClientModule,
     HttpModule,
     FormsModule,
     RouterModule.forRoot(
@@ -38,7 +39,7 @@ import { FeedbackEditComponent } from './feedback-edit/feedback-edit.component';
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [AuthService],
+  providers: [AuthService, IsUserLoggedInGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

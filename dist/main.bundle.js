@@ -89,12 +89,12 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/esm5/platform-browser.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__("../../../http/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_routes__ = __webpack_require__("../../../../../src/app/app.routes.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__auth_auth_service__ = __webpack_require__("../../../../../src/app/auth/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_routes__ = __webpack_require__("../../../../../src/app/app.routes.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__auth_auth_service__ = __webpack_require__("../../../../../src/app/auth/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__guards_userIsLoggedIn_guard__ = __webpack_require__("../../../../../src/app/guards/userIsLoggedIn.guard.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__home_home_component__ = __webpack_require__("../../../../../src/app/home/home.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__callback_callback_component__ = __webpack_require__("../../../../../src/app/callback/callback.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__feedback_feedback_component__ = __webpack_require__("../../../../../src/app/feedback/feedback.component.ts");
@@ -128,7 +128,7 @@ var AppModule = (function () {
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */],
                 __WEBPACK_IMPORTED_MODULE_9__home_home_component__["a" /* HomeComponent */],
                 __WEBPACK_IMPORTED_MODULE_10__callback_callback_component__["a" /* CallbackComponent */],
                 __WEBPACK_IMPORTED_MODULE_11__feedback_feedback_component__["a" /* FeedbackComponent */],
@@ -138,14 +138,14 @@ var AppModule = (function () {
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["b" /* HttpClientModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_http__["a" /* HttpModule */],
+                //HttpClientModule,
+                __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_7__app_routes__["a" /* ROUTES */], { enableTracing: true } // <-- debugging purposes only
+                __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_6__app_routes__["a" /* ROUTES */], { enableTracing: true } // <-- debugging purposes only
                 )
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_8__auth_auth_service__["a" /* AuthService */]],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
+            providers: [__WEBPACK_IMPORTED_MODULE_7__auth_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_8__guards_userIsLoggedIn_guard__["a" /* IsUserLoggedInGuard */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
@@ -166,6 +166,8 @@ var AppModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__feedback_detail_feedback_detail_component__ = __webpack_require__("../../../../../src/app/feedback-detail/feedback-detail.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__feedback_create_feedback_create_component__ = __webpack_require__("../../../../../src/app/feedback-create/feedback-create.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__feedback_edit_feedback_edit_component__ = __webpack_require__("../../../../../src/app/feedback-edit/feedback-edit.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__guards_userIsLoggedIn_guard__ = __webpack_require__("../../../../../src/app/guards/userIsLoggedIn.guard.ts");
+
 
 
 
@@ -177,24 +179,31 @@ var ROUTES = [
     {
         path: 'feedbacks',
         component: __WEBPACK_IMPORTED_MODULE_2__feedback_feedback_component__["a" /* FeedbackComponent */],
-        data: { title: 'Feedback List' }
+        data: { title: 'Feedback List' },
+        canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_userIsLoggedIn_guard__["a" /* IsUserLoggedInGuard */]]
     },
     {
         path: 'feedback-details/:id',
         component: __WEBPACK_IMPORTED_MODULE_3__feedback_detail_feedback_detail_component__["a" /* FeedbackDetailComponent */],
-        data: { title: 'Feedback Details' }
+        data: { title: 'Feedback Details' },
+        canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_userIsLoggedIn_guard__["a" /* IsUserLoggedInGuard */]]
     },
     {
         path: 'feedback-create',
         component: __WEBPACK_IMPORTED_MODULE_4__feedback_create_feedback_create_component__["a" /* FeedbackCreateComponent */],
-        data: { title: 'Create Feedback' }
+        data: { title: 'Create Feedback' },
+        canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_userIsLoggedIn_guard__["a" /* IsUserLoggedInGuard */]]
     },
     {
         path: 'feedback-edit/:id',
         component: __WEBPACK_IMPORTED_MODULE_5__feedback_edit_feedback_edit_component__["a" /* FeedbackEditComponent */],
-        data: { title: 'Edit Feedback' }
+        data: { title: 'Edit Feedback' },
+        canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_userIsLoggedIn_guard__["a" /* IsUserLoggedInGuard */]]
     },
-    { path: 'callback', component: __WEBPACK_IMPORTED_MODULE_1__callback_callback_component__["a" /* CallbackComponent */] },
+    {
+        path: 'callback', component: __WEBPACK_IMPORTED_MODULE_1__callback_callback_component__["a" /* CallbackComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_userIsLoggedIn_guard__["a" /* IsUserLoggedInGuard */]]
+    },
     { path: '**', redirectTo: '' }
 ];
 
@@ -675,6 +684,42 @@ var FeedbackComponent = (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
     ], FeedbackComponent);
     return FeedbackComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/guards/userIsLoggedIn.guard.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IsUserLoggedInGuard; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__auth_auth_service__ = __webpack_require__("../../../../../src/app/auth/auth.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var IsUserLoggedInGuard = (function () {
+    function IsUserLoggedInGuard(authService) {
+        this.authService = authService;
+    }
+    IsUserLoggedInGuard.prototype.canActivate = function () {
+        return this.authService.isAuthenticated();
+    };
+    IsUserLoggedInGuard = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__auth_auth_service__["a" /* AuthService */]])
+    ], IsUserLoggedInGuard);
+    return IsUserLoggedInGuard;
 }());
 
 
