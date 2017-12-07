@@ -18,7 +18,7 @@ export class FeedbackCreateComponent implements OnInit {
   }
 
   saveFeedback() {
-    this.http.post('/feedback', this.feedback)
+    this.http.post('http://localhost:4201/feedback', this.feedback)
       .subscribe(res => {
           let id = res['_id'];
           this.router.navigate(['/feedback-details', id]);

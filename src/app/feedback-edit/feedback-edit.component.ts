@@ -19,13 +19,13 @@ export class FeedbackEditComponent implements OnInit {
   }
 
   getFeedback(id) {
-    this.http.get('/feedback/'+id).subscribe(data => {
+    this.http.get('http://localhost:4201/feedback/'+id).subscribe(data => {
       this.feedback = data;
     });
   }
 
   updateFeedback(id, data) {
-    this.http.put('/feedback/'+id, data)
+    this.http.put('http://localhost:4201/feedback/'+id, data)
       .subscribe(res => {
           let id = res['_id'];
           this.router.navigate(['/feedback-details', id]);

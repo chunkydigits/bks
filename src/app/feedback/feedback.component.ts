@@ -13,7 +13,7 @@ export class FeedbackComponent implements OnInit {
   feedbacks: any;
 
   ngOnInit() {
-    this.http.get('/feedback').subscribe(data => {
+    this.http.get('http://localhost:4201/feedback').subscribe(data => {
       this.feedbacks = data;
     });
   }

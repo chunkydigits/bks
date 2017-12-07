@@ -13,8 +13,7 @@ export const ROUTES: Routes = [
   { path: '', component: HomeComponent },
   {
     path: 'callback',
-    component: CallbackComponent,
-    canActivate: [IsUserLoggedInGuard]
+    component: CallbackComponent
   },
   {
     path: 'feedbacks',

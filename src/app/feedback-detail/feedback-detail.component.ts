@@ -19,13 +19,13 @@ export class FeedbackDetailComponent implements OnInit {
   }
 
   getFeedbackDetail(id) {
-    this.http.get('/feedback/'+id).subscribe(data => {
+    this.http.get('http://localhost:4201/feedback/'+id).subscribe(data => {
       this.feedback = data;
     });
   }
 
   deleteFeedback(id) {
-    this.http.delete('/feedback/'+id)
+    this.http.delete('http://localhost:4201/feedback/'+id)
       .subscribe(res => {
           this.router.navigate(['/feedbacks']);
         }, (err) => {
