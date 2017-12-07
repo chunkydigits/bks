@@ -40,10 +40,10 @@
           <label for="name">Outstanding Actions</label>
           <input type="text" class="form-control" [(ngModel)]="feedback.outstandingActions" name="outstandingActions" required>
         </div>
-        <!-- <div class="form-group">
+        <div class="form-group">
           <label for="name">Strategic Review Link</label>
           <input type="text" class="form-control" [(ngModel)]="feedback.strategicReviewLink" name="strategicReviewLink" required>
-        </div> -->
+        </div>
         <div class="form-group">
           <button type="submit" class="btn btn-success" [disabled]="!feedback.form.valid">Save</button>
         </div>
